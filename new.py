@@ -41,27 +41,6 @@ from streamlit_option_menu import option_menu
 import plotly.express as px
 
 
-def format_number(n):
-    if n < 1000:
-        return str(n)
-    elif n < 1000000:
-        formatted = f"{n / 1000:.2f}"
-        if formatted.endswith('.00'):
-            formatted = formatted[:-3]
-        elif formatted.endswith('0'):
-            formatted = formatted[:-1]
-        return formatted + "k"
-    else:
-        formatted = f"{n / 1000000:.2f}"
-        if formatted.endswith('.00'):
-            formatted = formatted[:-3]
-        elif formatted.endswith('0'):
-            formatted = formatted[:-1]
-        return formatted + "M"
-
-
-
-
 pd.set_option("display.max_columns", None)
 pd.set_option('display.max_rows', None)
 
